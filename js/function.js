@@ -14,3 +14,12 @@ function nameChanger(oldName) {
     finalName = names.join(" ");
     return finalName;
 }
+
+
+// Function to remove '<'and '>' tag from script tag
+var charEscape = function(_html) {
+    var newHTML = _html;
+    newHTML = _html.replace(/</g, "&lt;");
+    newHTML = newHTML.replace(/>/g, "&gt;");
+    return newHTML;
+};

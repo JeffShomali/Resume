@@ -133,9 +133,12 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         if (document.getElementsByClassName('project-entry').length === 0) {
             document.getElementById('projects').style.display = 'none';
         }
-        if (document.getElementsByClassName('education-entry').length === 0) {
-            document.getElementById('education').style.display = 'none';
-        }
+     //    if (document.getElementsByClassName('education-entry').length === 0) {
+     //        document.getElementById('education').style.display = 'none';
+     //    }
+     if (document.getElementsByClassName('education-entry').length === 0) {
+         document.getElementById('education').style.backgroundColor = "black";
+     }
         if (document.getElementsByClassName('flex-item').length === 0) {
             document.getElementById('lets-connect').style.display = 'none';
         }
@@ -143,6 +146,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
             document.getElementById('mapDiv').style.display = 'none';
         }
     </script>
+
 </body>
 
 </html>
