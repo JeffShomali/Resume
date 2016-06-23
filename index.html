@@ -69,6 +69,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         <div style="clear: both;"></div>
         <div id="workExperience" class="gray">
             <h2>Work Experience</h2>
+            <div class="work-entry">
+
+            </div>
         </div>
 
         <div id="projects">
@@ -120,33 +123,72 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
             an opening and closing set of slash asterisks for block comments.
         */
 
+        // - - - - - - - - - - - - - - - - - - - - -  TOP - - - - - - - - - - - - - - - - - - - - - -
 
         if (document.getElementsByClassName('flex-item').length === 0) {
             document.getElementById('topContacts').style.display = 'none';
         }
+        // - - - - - - - - - - - - - - - - - - - - -  Skills - - - - - - - - - - - - - - - - - - - - - -
+
+        // Appending skills to page
+        if (Object.keys(bio).length !== 0) { // if bio object is not empty
+            $("#header").append(HTMLskillsStart); //append HTMLskillsStart from helperjs into #header
+            //add all skills into the #skills unordered list
+            var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
+            $("#skills").append(formattedSkills);
+            var formattedSkills = HTMLskills.replace("%data%", bio.skills[1]);
+            $("#skills").append(formattedSkills);
+            var formattedSkills = HTMLskills.replace("%data%", bio.skills[2]);
+            $("#skills").append(formattedSkills);
+        }
+
         if (document.getElementsByTagName('h1').length === 0) {
             document.getElementById('header').style.display = 'none';
         }
+
+        // - - - - - - - - - - - - - - - - - - - - -  WORK - - - - - - - - - - - - - - - - - - - - - -
+
+        function displayWork(_inclass) {
+            for (var i in _inclass.jobs) {
+                $("#workExperience").append(HTMLworkStart);
+                var formattedworkEmployer = HTMLworkEmployer.replace("%data%", _inclass.jobs[i].workEmployer) + HTMLworkTitle.replace("%data%", _inclass.jobs[i].workTitle);
+                $(".work-entry:last").append(formattedworkEmployer);
+                var formattedworkDates = HTMLworkDates.replace("%data%", _inclass.jobs[i].workDates);
+                $(".work-entry:last").append(formattedworkDates);
+                var formattedworkLocation = HTMLworkLocation.replace("%data%", _inclass.jobs[i].workLocation);
+                $(".work-entry:last").append(formattedworkLocation);
+                var formattedworkDescription = HTMLworkDescription.replace("%data%", _inclass.jobs[i].workDescription);
+                $(".work-entry:last").append(formattedworkDescription);
+
+                //  console.log(_inclass.jobs[i].workEmployer); //for debuging perpusses
+            }
+        }; //end function
+        displayWork(work); //call function
+
         if (document.getElementsByClassName('work-entry').length === 0) {
             document.getElementById('workExperience').style.display = 'none';
         }
+        // - - - - - - - - - - - - - - - - - - - - -  project - - - - - - - - - - - - - - - - - - - - - -
+
         if (document.getElementsByClassName('project-entry').length === 0) {
             document.getElementById('projects').style.display = 'none';
         }
-     //    if (document.getElementsByClassName('education-entry').length === 0) {
-     //        document.getElementById('education').style.display = 'none';
-     //    }
-     if (document.getElementsByClassName('education-entry').length === 0) {
-         document.getElementById('education').style.backgroundColor = "black";
-     }
+        // - - - - - - - - - - - - - - - - - - - - -  Education - - - - - - - - - - - - - - - - - - - - - -
+
+        if (document.getElementsByClassName('education-entry').length === 0) {
+            document.getElementById('education').style.display = 'none';
+        }
+        // - - - - - - - - - - - - - - - - - - - - -  Footer - - - - - - - - - - - - - - - - - - - - - -
+
         if (document.getElementsByClassName('flex-item').length === 0) {
             document.getElementById('lets-connect').style.display = 'none';
         }
+        // - - - - - - - - - - - - - - - - - - - - -  Map - - - - - - - - - - - - - - - - - - - - - -
+
         if (document.getElementById('map') === null) {
             document.getElementById('mapDiv').style.display = 'none';
         }
     </script>
-
 </body>
 
 </html>
