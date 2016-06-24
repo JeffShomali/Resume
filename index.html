@@ -47,8 +47,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
   -->
-    <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
-
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
     <meta name="viewport" content="width=device-width">
 </head>
 
@@ -170,9 +169,23 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         }
         // - - - - - - - - - - - - - - - - - - - - -  project - - - - - - - - - - - - - - - - - - - - - -
 
-        if (document.getElementsByClassName('project-entry').length === 0) {
-            document.getElementById('projects').style.display = 'none';
-        }
+        //    if (document.getElementsByClassName('project-entry').length === 0) { // document.getElementById('projects').style.display = 'none'; // }
+        project.displayProject = function(_project) {
+            for (var i in _project.projects) {
+                $('#projects').append(HTMLprojectStart);
+                var formattedworkEmployer = HTMLprojectTitle.replace("%data%", _project.projects[i].projectTitle);
+                $(".project-entry:last").append(formattedworkEmployer);
+                var formattedworkDates = HTMLprojectDates.replace("%data%", _project.projects[i].projectDates);
+                $(".project-entry:last").append(formattedworkDates);
+                var formattedworkLocation = HTMLprojectDescription.replace("%data%", _project.projects[i].projectDescription);
+                $(".project-entry:last").append(formattedworkLocation);
+                var formattedworkDescription = HTMLprojectImage.replace("%data%", _project.projects[i].projectImage);
+                $(".project-entry:last").append(formattedworkDescription);
+                //  console.log(_inclass.jobs[i].workEmployer); //for debuging perpusses
+            }
+        };
+
+        project.displayProject(project);
         // - - - - - - - - - - - - - - - - - - - - -  Education - - - - - - - - - - - - - - - - - - - - - -
 
         if (document.getElementsByClassName('education-entry').length === 0) {

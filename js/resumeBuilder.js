@@ -75,8 +75,9 @@ var project = {
         "projectDates": "2015 - 2016",
         "projectDescription": "Pars Equality is a startup accelator in Silicon Valley",
         "projectImage": " http://placehold.it/350x250",
-    }, ]
+    } ]
 };
+
 
 
 // - - - - - - - - - - - - - - - - - - - - - - -  Header - - - - - - - - - - - - - - - - - - - - - - -
@@ -121,27 +122,29 @@ $(".center-content").append(forattedWelcomeMessage);
 
 // - - - - - - - - - - - - - - - - - - - - - - - Projects - - - - - - - - - - - - - - - - - - - - - - -
 //project 1
-var formattedprojectStart = HTMLprojectStart;
-$('#projects').append(formattedprojectStart);
-var formattedprojectTitle = HTMLprojectTitle.replace("%data%", project.projects[0].projectTitle);
-$('.project-entry').append(formattedprojectTitle);
-var formattedprojectDates = HTMLprojectDates.replace("%data%", project.projects[0].projectDates);
-$('.project-entry').append(formattedprojectDates);
-var formattedprojectDescription = HTMLprojectDescription.replace("%data%", project.projects[0].projectDescription);
-$('.project-entry').append(formattedprojectDescription);
-var formattedprojectImage = HTMLprojectImage.replace("%data%", project.projects[0].projectImage);
-$('.project-entry').append(formattedprojectImage);
-//project 2
 // var formattedprojectStart = HTMLprojectStart;
-//      $('#projects').append(formattedprojectStart);
-var formattedprojectTitle = HTMLprojectTitle.replace("%data%", project.projects[1].projectTitle);
-$('.project-entry').append(formattedprojectTitle);
-var formattedprojectDates = HTMLprojectDates.replace("%data%", project.projects[1].projectDates);
-$('.project-entry').append(formattedprojectDates);
-var formattedprojectDescription = HTMLprojectDescription.replace("%data%", project.projects[1].projectDescription);
-$('.project-entry').append(formattedprojectDescription);
-var formattedprojectImage = HTMLprojectImage.replace("%data%", project.projects[1].projectImage);
-$('.project-entry').append(formattedprojectImage);
+// $('#projects').append(formattedprojectStart);
+// var formattedprojectTitle = HTMLprojectTitle.replace("%data%", project.projects[0].projectTitle);
+// $('.project-entry').append(formattedprojectTitle);
+// var formattedprojectDates = HTMLprojectDates.replace("%data%", project.projects[0].projectDates);
+// $('.project-entry').append(formattedprojectDates);
+// var formattedprojectDescription = HTMLprojectDescription.replace("%data%", project.projects[0].projectDescription);
+// $('.project-entry').append(formattedprojectDescription);
+// var formattedprojectImage = HTMLprojectImage.replace("%data%", project.projects[0].projectImage);
+// $('.project-entry').append(formattedprojectImage);
+// //project 2
+// // var formattedprojectStart = HTMLprojectStart;
+// //      $('#projects').append(formattedprojectStart);
+// var formattedprojectTitle = HTMLprojectTitle.replace("%data%", project.projects[1].projectTitle);
+// $('.project-entry').append(formattedprojectTitle);
+// var formattedprojectDates = HTMLprojectDates.replace("%data%", project.projects[1].projectDates);
+// $('.project-entry').append(formattedprojectDates);
+// var formattedprojectDescription = HTMLprojectDescription.replace("%data%", project.projects[1].projectDescription);
+// $('.project-entry').append(formattedprojectDescription);
+// var formattedprojectImage = HTMLprojectImage.replace("%data%", project.projects[1].projectImage);
+// $('.project-entry').append(formattedprojectImage);
+
+
 
 
 //- - - - - - - - - - - - - - - - - - - - - - -  Education - - - - - - - - - - - - - - - - - - - - - - -
@@ -164,3 +167,6 @@ $('.education-entry').append(formattedschoolMajor);
 
 //- - - - - - - - - - - - - - - - - - - - - - -  Button - - - - - - - - - - - - - - - - - - - - - - -
 $("#main").append(internationalizeButton);
+
+//- - - - - - - - - - - - - - - - - - - - - - -  Map - - - - - - - - - - - - - - - - - - - - - - -
+$("#mapDiv").append(googleMap);
