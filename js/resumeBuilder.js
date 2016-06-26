@@ -2,7 +2,7 @@
 var bio = {
     "name": "Jeff Shomali",
     "role": "Full Stack Web Developer",
-    "contact": {
+    "contacts": {
         "mobile": "415-504-1135",
         "email": "jeffshomali@gmail.com",
         "twitter": "@jeffshomali",
@@ -10,11 +10,23 @@ var bio = {
         "blog": "www.JeffShomali.com",
         "location": "San Francisco"
     },
-    "biopic": "../Resume/images/avatar.png",
-    "welcome_message": "Welcome to my resume",
+    "biopic": "images/avatar.png",
+    "welcomeMmessage": "Welcome to my resume",
     "skills": ["Web Developer", "Enterprunier", "Blogger", "Designer"]
-};
 
+};
+// name : string
+//    role : string
+//    contacts : an object with
+//          mobile: string
+//          email: string
+//          github: string
+//          twitter: string (optional)
+//          location: string
+//    welcomeMessage: string
+//    skills: array of strings
+//    biopic: url
+//    display: function taking no parameters
 
 //work object
 var work = {
@@ -84,12 +96,12 @@ var project = {
 // - - - - - - - - - - - - - - - - - - - - - - -  Contact - - - - - - - - - - - - - - - - - - - - - - -
 function displayBio() {
 
-     var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
-     var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
-     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
-     var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
-     var formattedBlog = HTMLblog.replace("%data%", bio.contact.blog);
-     var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
+     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+     var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
+     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
      $("#topContacts , #footerContacts").append(formattedMobile);
      $("#topContacts , #footerContacts").append(formattedEmail);
@@ -99,10 +111,12 @@ function displayBio() {
      $("#topContacts , #footerContacts").append(formattedLocation);
 
 }
+
+displayBio();
 // - - - - - - - - - - - - - - - - - - - - - - - Skills - - - - - - - - - - - - - - - - - - - - - - -
 function displaySkills() {
      var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-     var forattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcome_message);
+     var forattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMmessage);
      $(".center-content").append(formattedBioPic);
      $(".center-content").append(forattedWelcomeMessage);
 
